@@ -13,16 +13,16 @@ public class Number_Guess_Game {
 	public void binary_search() throws NotInRangeIntegerException {
 
 		System.out.println("Pick a number between " + min + " and " + max + ".");
-		int temp;
+		int mean;
 		Scanner input = new Scanner(System.in);
 		// int num = in.nextInt();
 		
 		while (min != max) {
-			temp = min + (max - min) / 2;
+			mean = min + (max - min) / 2;
 			boolean answer_bool = false;
 
 			Scanner sc = new Scanner(System.in);
-			System.out.println("Please answer with a yes or no if your number is bigger than " + temp + "?");
+			System.out.println("Please answer with a yes or no if your number is bigger than " + mean + "?");
 			String answer = sc.next(); // yes or no
 
 			switch(answer) {
@@ -38,9 +38,9 @@ public class Number_Guess_Game {
 			}
 			
 			if (answer_bool) {
-				min = temp + 1;
+				min = mean + 1;
 			} else {
-				max = temp;
+				max = mean;
 			}
 		}//while
 
